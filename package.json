@@ -1,0 +1,24 @@
+{
+    "name": "verify_signer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@truffle/hdwallet-provider": "^1.0.41-1",
+        "axios": "^1.6.8",
+        "body-parser": "^1.20.2",
+        "ejs": "^3.1.9",
+        "express": "^4.19.1",
+        "jsonwebtoken": "^9.0.2",
+        "web3": "^4.6.0",
+        "web3.js-browser": "^0.2.0",
+        "mongoose": "^6.1.0",
+        "mongoose-sequence": "^5.3.1"
+    }
+}
