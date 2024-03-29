@@ -13,9 +13,6 @@ const privatekey = "4e21f1359eac9ff41d377b988e82fc4ee731cd9372859b95655e3b745b29
 fetch('/get-data')
     .then(response => response.json())
     .then(data => {
-        // Lưu dữ liệu từ máy chủ vào mảng
-
-        // Lặp qua mỗi đối tượng trong dữ liệu
         data.forEach(item => {
             const { address, hashedmessage, uint256 } = item;
             const newUser = {
@@ -92,7 +89,11 @@ $("#btnReward").click(function () {
         let _token = parseInt($("#txtToken").val());
         let dataSign = "{wallet:'" + _wallet + "',reward:" + _token + "}";
         let hashedMessage = web3.eth.accounts.hashMessage(dataSign);
-        let _tmp = [hashedMessage, _wallet, _token];
+        let _tmp = {
+            address: _wallet,
+            hashedmessage: hashedmessage,
+            uint256: _token
+        };
         arrReward.push(_tmp);
         console.log(arrReward);
         insertDataToPost(hashedMessage, _wallet, _token);
